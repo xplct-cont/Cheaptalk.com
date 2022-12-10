@@ -5,7 +5,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container ">
+    <div class="container">
         <h1 class="text-center" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
         <div class="content " style="position: relative; margin-left: 100px;">
             <div class="row mt-5 text-center">

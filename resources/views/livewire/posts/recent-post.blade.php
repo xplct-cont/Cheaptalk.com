@@ -1,7 +1,7 @@
 <div class="container col-md-12">
     @include('livewire.modals.modal')
    
-    <div class="post-body mt-2">
+    <div class="post-body col-md-12 mt-2">
         <div class="offset-3">
             @if (session('message'))
                 <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
@@ -31,7 +31,7 @@
 
             <div class="row">
                 @foreach ($recents as $recent)
-                    <div class="col-md-6 mt-1" >
+                    <div class="col-md-4 mt-1" >
                         <div class="card shadow-lg ">
                             <div class="card-header" style="background-color: #2c70b1;" id="cardd">
                                 @role('admin')
@@ -222,10 +222,7 @@
     .write-2:hover {
         background-color: rgba(255, 255, 255, 0.789);
     }
-    #modall {
-        background-color: rgb(52, 52, 52);
-        margin-top: 20%;
-    }
+    
     .title1 {
         margin-left: 38%;
     }
@@ -247,16 +244,13 @@
     .close:hover {
         background-color: rgb(125, 121, 121);
     }
-    #rm {
-        background-color: rgb(52, 52, 52);
-        color: whitesmoke;
-    }
+   
     #text-area {
         border: none;
         background-color: transparent;
         resize: none;
         outline: none;
-        color: white;
+        color: black;
     }
 </style>
 

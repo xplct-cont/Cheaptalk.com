@@ -1,92 +1,72 @@
-<div class="div">
+<div class="div col-md-11">
     @include('livewire.modals.modal')
-    <div class="container">
-        <div class="profile">
-            <h2 class="mt-3" style="font-family: Comic Sans MS">{{Auth::user()->name}} Profile</h2>
-        </div>
-        <div class="post-body">
-            <div class="col-md-6 offset-3 mt-5" style="width: 560px">
-                <div class="card shadow-md p-3" id="write">
-                    <input type="text" placeholder="Write a post" class="write-2 form-control" data-toggle="modal" data-target="#click">
+    
+        <div class="post-body col-md-12 mt-2">
+            <div class=" offset-3 " >
+                <div class=" shadow-md p-3 " style="width:200px;">
+                    <button class="write-2 form-control" style="color:white;background-color: #2c70b1;" data-toggle="modal" data-target="#click">Create new post</button>
                 </div>
             </div>
-            <hr>
-            <div class="col-md-6 mt-4 offset-3">
+           
+            <div class="offset-3">
                 @if (session('message'))
                     <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
                 @endif
-                @foreach ($posts as $post)
-                <div class="card shadow-md mt-3" id="cardd" style="width: 560px">
-                    <div class="card-header">
-                        @if($post->isEditable())
-                        <span id="dot-icon" class="float-end dropdown dropstart">
-                            <span class="fa-solid fa-ellipsis-vertical text-black" type="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" data-toggle="modal" data-target="#click-delete" wire:click="delete({{ $post->id }})">Delete</a></li>
-                                <li><a class="dropdown-item" data-toggle="modal" data-target="#click-edit" wire:click="editPosts({{ $post->id }})">Edit</a></li>
-                            </ul>
-                        </span>
-                        @endif
-                        <span class="float-end" id="titlee">
-                                <span class="float-end" id="titleee">-{{ $post->title }}</span>
-                            <span class="
-                            {{($post->title === 'Feeling Sick')? 'font-icon fa-solid fa-face-thermometer': '' }}
-                            {{($post->title === 'Feeling Sad')? 'font-icon fa-solid fa-face-sad-sweat': '' }}
-                            {{($post->title === 'Feeling Emotional')? 'font-icon fa-solid fa-face-holding-back-tears': '' }}
-                            {{($post->title === 'Feeling Broken')? 'font-icon-heart fa-solid fa-heart-crack': '' }}
-                            {{($post->title === 'Feeling Happy')? 'font-icon fa-solid fa-face-smile': '' }}
-                            {{($post->title === 'Feeling Cute')? 'font-icon fa-solid fa-face-grin-stars': '' }}
-                            {{($post->title === 'Feeling Loved')? 'font-icon fa-solid fa-face-smile-hearts': '' }}
-                            {{($post->title === 'Feeling Thankful')? 'font-icon fa-solid fa-face-smiling-hands': '' }}
-                            {{($post->title === 'Feeling Angry')? 'font-icon fa-solid fa-face-swear': '' }}
-                            {{($post->title === 'Feeling Crazy')? 'font-icon fa-solid fa-face-woozy': '' }}
-                            {{($post->title === 'Feeling Hopeful')? 'font-icon fa-solid fa-face-awesome': '' }}
-                            {{($post->title === 'Feeling Proud')? 'font-icon fa-solid fa-face-beam-hand-over-mouth': '' }}
-                            {{($post->title === 'Feeling Fresh')? 'font-icon fa-solid fa-face-clouds': '' }}
-                            {{($post->title === 'Feeling Blessed')? 'font-icon fa-solid fa-face-smile-halo': '' }}
-                            {{($post->title === 'Feeling Bad')? 'font-icon fa-solid fa-face-angry-horns': '' }}
-                            {{($post->title === 'Feeling Rich')? 'font-icon fa-solid fa-face-tongue-money': '' }}
-                            {{($post->title === 'Feeling Betrayed')? 'font-icon fa-solid fa-face-weary': '' }}
-                            {{($post->title === 'Feeling Sleepy')? 'font-icon fa-solid fa-face-sleeping': '' }}
-                            {{($post->title === 'Feeling Nervous')? 'font-icon fa-solid fa-face-persevering': '' }}
-                            {{($post->title === 'Feeling Uncomfortable')? 'font-icon fa-solid fa-face-pleading': '' }}
-                            {{($post->title === 'Feeling Cold')? 'font-icon fa-solid fa-face-icecles': '' }}
-                            {{($post->title === 'Feeling Lol')? 'font-icon fa-solid fa-face-grin-tears': '' }}
-                            {{($post->title === 'Feeling In loved')? 'font-icon fa-solid fa-face-kiss-wink-hearts': '' }}
-                            {{($post->title === 'Feeling Incomplete')? 'font-icon fa-solid fa-face-dotted': '' }}
-                            {{($post->title === 'Feeling Cool')? 'font-icon fa-solid fa-face-sunglasses': '' }}
-                            {{($post->title === 'Feeling Wow')? 'font-icon fa-solid fa-face-surprise': '' }}
-                            {{($post->title === 'Feeling Cry')? 'font-icon fa-solid fa-face-sad-cry': '' }}
-                            {{($post->title === 'Feeling Explode')? 'font-icon fa-solid fa-face-explode': '' }}
-                            {{($post->title === 'Feeling Disguise')? 'font-icon fa-solid fa-face-disguise': '' }}
-                            "></span></span>
-                            <img class="profile2" src="
-                            {{($post->user->gender === 'Male') ? asset('images/male.png') : ''}}
-                            {{($post->user->gender === 'Female') ? asset('images/female.png') : ''}}
-                            {{($post->user->gender === 'Transgender') ? asset('images/transgender.png') : ''}}
-                            {{($post->user->gender === 'Bisexual') ? asset('images/bisexual.png') : ''}}
-                            ">
-                        <a class="name" href="/my-post">{{ $post->user->name }}</a><br>
-                        <span class="time">{{ $post->created_at->format('g:i A') }}</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="contentt"><span>{{ $post->content }}</span></div>
-                    </div>
-                    <div class="card-footer">
-                        <span id="lc"><i class="fa-light fa-thumbs-up"></i> Like</span>
-                        <span id="lc"><i class="fa-light fa-message"></i> Comment</span>
-                        <span class="float-end" id="genderr">&nbsp;{{ $post->user->gender }}</span>
-                        <div class="float-end
-                            {{($post->user->gender === 'Male')? 'male fa-regular fa-mars': '' }}
-                            {{($post->user->gender === 'Female')? 'female fa-regular fa-venus': '' }}
-                            {{($post->user->gender === 'Bisexual')? 'bisexual fa-regular fa-venus-mars': '' }}
-                            {{($post->user->gender === 'Transgender')? 'transgender fa-regular fa-transgender': '' }}">
-                        </div>
-                    </div>
+
+                <div class="d-flex justify-content-end">
+                    <h2 class="mt-1 mb-3" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-size: 25px; font-weight: 500;">My Posts</h2>
                 </div>
-                @endforeach
-            </div>
+
+                <div class="row">
+                    @foreach ($posts as $post)
+                    <div class="col-md-4 mt-1" >
+                        <div class="card shadow-md mt-3" id="cardd">
+                            <div class="card-header" style="background-color: #2c70b1;">
+                               
+                               
+                                @if($post->isEditable())
+                                <span id="dot-icon" class="float-end dropdown dropstart" style="background-color:#2c70b1">
+                                    <span class="fas fa-user-edit text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" data-toggle="modal" data-target="#click-delete" wire:click="delete({{ $post->id }})">Delete</a></li>
+                                        <li><a class="dropdown-item" data-toggle="modal" data-target="#click-edit" wire:click="editPosts({{ $post->id }})">Edit</a></li>
+                                    </ul>
+                                </span>
+                                @endif
+        
+                    
+                                <span class="float-start" >{{ $post->title }}</span>
+                            </div>
+                          
+                            <div class="card-footer bg-secondary">
+                        
+                                <div class="float-center d-flex justify-content-center">
+                                <img class="card" style="border-radius: 50%; width: 80px;" id="pf1"
+                                src="{{ $post->user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
+                                alt="photo">
+                          
+                                </div>
+                                <p class="text-center text-light">{{ $post->user->name }}</p>
+                                
+                            </div>
+                            <div class="card-body bg-light rounded shadow-lg">
+                                <div class="contentt " style="height: 100px;"><span class="text-dark">{{ $post->content }}</span></div>
+                            </div>
+                        </div>
+        
+
+                </div>
+            @endforeach
         </div>
+        
+
+
+      
+      
+        </div>
+    </div>
+       
         @if($posts->isEmpty())
             <div class="text-gray-500">
                 <h1 class="text-center">No posts yet.</h1>
