@@ -1,123 +1,82 @@
-<div class="container">
+<div class="container col-md-12">
     @include('livewire.modals.modal')
-    <div class="profile">
-        <h2 class="mt-3" style="font-family: Comic Sans MS">Recent Posts</h2>
-    </div>
-    <div class="post-body">
-        <div class="col-md-6 offset-3">
+   
+    <div class="post-body mt-2">
+        <div class="offset-3">
             @if (session('message'))
                 <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
             @endif
-            <select class="form-select mb-1" id="searchh" wire:model.lazy="title">
-                <option value="All">All</option>
-                <option value="Feeling Sick">Feeling Sick</option>
-                <option value="Feeling Sad">Feeling Sad</option>
-                <option value="Feeling Emotional">Feeling Emotional</option>
-                <option value="Feeling Broken">Feeling Broken</option>
-                <option value="Feeling Happy">Feeling Happy</option>
-                <option value="Feeling Cute">Feeling Cute</option>
-                <option value="Feeling Loved">Feeling Loved</option>
-                <option value="Feeling Thankful">Feeling Thankful</option>
-                <option value="Feeling Angry">Feeling Angry</option>
-                <option value="Feeling Crazy">Feeling Crazy</option>
-                <option value="Feeling Hopeful">Feeling Hopeful</option>
-                <option value="Feeling Proud">Feeling Proud</option>
-                <option value="Feeling Fresh">Feeling Fresh</option>
-                <option value="Feeling Blessed">Feeling Blessed</option>
-                <option value="Feeling Bad">Feeling Bad</option>
-                <option value="Feeling Rich">Feeling Rich</option>
-                <option value="Feeling Betrayed">Feeling Betrayed</option>
-                <option value="Feeling Sleepy">Feeling Sleepy</option>
-                <option value="Feeling Nervous">Feeling Nervous</option>
-                <option value="Feeling Uncomfortable">Feeling Uncomfortable</option>
-                <option value="Feeling Cold">Feeling Cold</option>
-                <option value="Feeling Lol">Feeling Lol</option>
-                <option value="Feeling In love">Feeling In love</option>
-                <option value="Feeling Incomplete">Feeling Incomplete</option>
-                <option value="Feeling Cool">Feeling Cool</option>
-                <option value="Feeling Wow">Feeling Wow</option>
-                <option value="Feeling Cry">Feeling Cry</option>
-                <option value="Feeling Explode">Feeling Explode</option>
-                <option value="Feeling Disguise">Feeling Disguise</option>
-            </select>
-            <div class="col p-3 shadow-sm rounded mb-5" id="write">
+           
+            <div class="col p-3 shadow-sm rounded mb-5" style="background-color: #2c70b1;" id="write">
+               <img src="images/image17.png" style="height: 29px; width:29px; padding-top:2px; padding-bottom:2px; padding-left: 2px; padding-right:2px; border-radius: 50%; background-color:white;" alt="">
+                <p class="text-light">Search Posts Here!</p>
                 <input type="text" class="write-2 form-control" placeholder="Search" wire:model.lazy="search">
             </div>
-            @foreach ($recents as $recent)
-            <div class="card shadow-md mt-3" style="width: 560px">
-                <div class="card-header" id="cardd">
-                    @role('admin')
-                    <span id="dot-icon" class="float-end dropdown dropstart">
-                        <span class="fa-solid fa-ellipsis-vertical text-black" type="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" data-toggle="modal" data-target="#click-delete-recent" wire:click="delete({{ $recent->id }})">Delete</a></li>
-                            <li><a class="dropdown-item" data-toggle="modal" data-target="#click-edit-recent" wire:click="editPosts({{ $recent->id }})">Edit</a></li>
-                        </ul>
-                    </span>
-                    @endrole
-                    <span class="float-end" id="titlee">
-                        <span class="float-end" id="titleee">-{{ $recent->title }}</span>
-                        <span class="
-                        {{($recent->title === 'Feeling Sick')? 'font-icon fa-solid fa-face-thermometer': '' }}
-                        {{($recent->title === 'Feeling Sad')? 'font-icon fa-solid fa-face-sad-sweat': '' }}
-                        {{($recent->title === 'Feeling Emotional')? 'font-icon fa-solid fa-face-holding-back-tears': '' }}
-                        {{($recent->title === 'Feeling Broken')? 'font-icon-heart fa-solid fa-heart-crack': '' }}
-                        {{($recent->title === 'Feeling Happy')? 'font-icon fa-solid fa-face-smile': '' }}
-                        {{($recent->title === 'Feeling Cute')? 'font-icon fa-solid fa-face-grin-stars': '' }}
-                        {{($recent->title === 'Feeling Loved')? 'font-icon fa-solid fa-face-smile-hearts': '' }}
-                        {{($recent->title === 'Feeling Thankful')? 'font-icon fa-solid fa-face-smiling-hands': '' }}
-                        {{($recent->title === 'Feeling Angry')? 'font-icon fa-solid fa-face-swear': '' }}
-                        {{($recent->title === 'Feeling Crazy')? 'font-icon fa-solid fa-face-woozy': '' }}
-                        {{($recent->title === 'Feeling Hopeful')? 'font-icon fa-solid fa-face-awesome': '' }}
-                        {{($recent->title === 'Feeling Proud')? 'font-icon fa-solid fa-face-beam-hand-over-mouth': '' }}
-                        {{($recent->title === 'Feeling Fresh')? 'font-icon fa-solid fa-face-clouds': '' }}
-                        {{($recent->title === 'Feeling Blessed')? 'font-icon fa-solid fa-face-smile-halo': '' }}
-                        {{($recent->title === 'Feeling Bad')? 'font-icon fa-solid fa-face-angry-horns': '' }}
-                        {{($recent->title === 'Feeling Rich')? 'font-icon fa-solid fa-face-tongue-money': '' }}
-                        {{($recent->title === 'Feeling Betrayed')? 'font-icon fa-solid fa-face-weary': '' }}
-                        {{($recent->title === 'Feeling Sleepy')? 'font-icon fa-solid fa-face-sleeping': '' }}
-                        {{($recent->title === 'Feeling Nervous')? 'font-icon fa-solid fa-face-persevering': '' }}
-                        {{($recent->title === 'Feeling Uncomfortable')? 'font-icon fa-solid fa-face-pleading': '' }}
-                        {{($recent->title === 'Feeling Cold')? 'font-icon fa-solid fa-face-icecles': '' }}
-                        {{($recent->title === 'Feeling Lol')? 'font-icon fa-solid fa-face-grin-tears': '' }}
-                        {{($recent->title === 'Feeling In loved')? 'font-icon fa-solid fa-face-kiss-wink-hearts': '' }}
-                        {{($recent->title === 'Feeling Incomplete')? 'font-icon fa-solid fa-face-dotted': '' }}
-                        {{($recent->title === 'Feeling Cool')? 'font-icon fa-solid fa-face-sunglasses': '' }}
-                        {{($recent->title === 'Feeling Wow')? 'font-icon fa-solid fa-face-surprise': '' }}
-                        {{($recent->title === 'Feeling Cry')? 'font-icon fa-solid fa-face-sad-cry': '' }}
-                        {{($recent->title === 'Feeling Explode')? 'font-icon fa-solid fa-face-explode': '' }}
-                        {{($recent->title === 'Feeling Disguise')? 'font-icon fa-solid fa-face-disguise': '' }}
-                        "></span></span>
-                        <img class="profile2" src="
-                        {{($recent->user->gender === 'Male') ? asset('images/male.png') : ''}}
-                        {{($recent->user->gender === 'Female') ? asset('images/female.png') : ''}}
-                        {{($recent->user->gender === 'Transgender') ? asset('images/transgender.png') : ''}}
-                        {{($recent->user->gender === 'Bisexual') ? asset('images/bisexual.png') : ''}}
-                        ">
-                    <span class="name">{{ $recent->user->name }}</span><br>
-                    <span class="time">{{ $recent->created_at->format('g:i A') }}</span>
-                </div>
-                <div class="card-body" id="cardd">
-                    <div class="contentt"><span>{{ $recent->content }}</span></div>
-                </div>
-                <div class="card-footer" id="cardd">
-                    <span id="lc"><i class="fa-light fa-thumbs-up"></i> Like</span>
-                    <span id="lc"><i class="fa-light fa-message"></i> Comment</span>
-                    <span class="float-end" id="genderr">&nbsp;{{ $recent->user->gender }}</span>
-                    <div class="float-end
-                        {{($recent->user->gender === 'Male')? 'male fa-regular fa-mars': '' }}
-                        {{($recent->user->gender === 'Female')? 'female fa-regular fa-venus': '' }}
-                        {{($recent->user->gender === 'Bisexual')? 'bisexual fa-regular fa-venus-mars': '' }}
-                        {{($recent->user->gender === 'Transgender')? 'transgender fa-regular fa-transgender': '' }}">
-                    </div>
-                </div>
+            <select class="form-select mb-1" style="background-color:#2c70b1; width: 300px;" id="searchh" wire:model.lazy="title">
+                <option value="All" class="text-center">---Select Category---</option>
+                <option value="Business">Business</option>
+                <option value="Education">Education</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Horror">Horror</option>
+                <option value="Politics">Politics</option>
+                <option value="Religion">Religion</option>
+                <option value="Romance">Romance</option>
+                
+            </select>
+            <div class="profile d-flex justify-content-end">
+                <h2 class="mt-1 mb-3" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 25px; font-weight: 500;">Recent Posts</h2>
             </div>
-            @endforeach
+
+            <div class="row">
+                @foreach ($recents as $recent)
+                    <div class="col-md-6 mt-1" >
+                        <div class="card shadow-lg ">
+                            <div class="card-header" style="background-color: #2c70b1;" id="cardd">
+                                @role('admin')
+                                <span id="dot-icon" class="float-end dropdown dropstart" style="background-color:#2c70b1">
+                                    <span class="fas fa-user-edit text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" data-toggle="modal" data-target="#click-delete-recent" wire:click="delete({{ $recent->id }})">Delete</a></li>
+                                        <li><a class="dropdown-item" data-toggle="modal" data-target="#click-edit-recent" wire:click="editPosts({{ $recent->id }})">Edit</a></li>
+                                    </ul>
+                                </span>
+                                @endrole
+            
+                                    <span class="float-start" >{{ $recent->title }}</span>
+                                </div>
+                              
+                                <div class="card-footer bg-secondary">
+                            
+                                    <div class="float-center d-flex justify-content-center">
+                                    <img class="card" style="border-radius: 50%; width: 80px;" id="pf1"
+                                    src="{{ $recent->user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
+                                    alt="photo">
+                              
+                                    </div>
+                                    <p class="text-center text-light">{{ $recent->user->name }}</p>
+                                    
+                                </div>
+                                <div class="card-body bg-light rounded shadow-lg">
+                                    <div class="contentt " style="height: 100px;"><span class="text-dark">{{ $recent->content }}</span></div>
+                                </div>
+                            </div>
+            
+
+                    </div>
+                @endforeach
+            </div>
+            
+
+
+          
+          
+            </div>
         </div>
-    </div>
     @if($recents->isEmpty())
         <div class="text-gray-500">
-            <h1 class="text-center">No one is posting yet.</h1>
+            <h1 class="text-center" style="font-weight: 400; font-size:30px;"><span class="fas fa-exclamation text-danger"></span> No posts.</h1>
         </div>
     @endif
     <button onclick="topFunction()" id="myBtn" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
