@@ -39,7 +39,7 @@
                                 <span class="float-start" >{{ $post->title }}</span>
                             </div>
                           
-                            <div class="card-footer bg-secondary">
+                            <div class="card-footer {{ $post->user->gender === 'Female' ? 'f1' : 'm1' }}">
                         
                                 <div class="float-center d-flex justify-content-center">
                                 <img class="card" style="border-radius: 50%; width: 80px;" id="pf1"
@@ -77,12 +77,19 @@
 </div>
 
 <style>
+
+      .f1 {
+            background-color: lightpink;
+        }
+        .m1 {
+            background-color: lightblue;
+        }
     #text-area {
         border: none;
-        background-color: transparent;
+        background-color: ;
         resize: none;
         outline: none;
-        color: white;
+        color: black;
     }
     .name {
         color: whitesmoke;

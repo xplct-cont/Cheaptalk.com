@@ -6,8 +6,8 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-center" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
-        <div class="content " style="position: relative; margin-left: 100px;">
+        <h1 class="text-start" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
+        <div class="content " style="position: relative; margin-left: 170px;">
             <div class="row mt-5 text-center">
                 <div class="col-md-3 mb-2">
                     <div class="card shadow">
@@ -60,7 +60,7 @@
                                         <i class="fa fa-book text-white mt-2" id="dash-icon"></i>
                                     </div>
                                     <div class="col mt-4">
-                                        <span class="text-white float-right" id="text" style="font-size:17px;">Total Logs</span><br>
+                                        <span class="text-white float-right" id="text" style="font-size:17px;">Activity Logs</span><br>
                                         <span class="text-white" id="text2">{{ $logs }}</span>
                                     </div>
                                 </div>
@@ -69,8 +69,6 @@
                     </div>
                 </div>
                 @endrole
-
-             
 
                 <div class="col-md-3">
                     <div class="card shadow">
@@ -93,9 +91,9 @@
         </div>
 
         @role('admin')
-        <section style="position:relative; top: -750px; margin-left: 80px;">
+        <section style="position:relative; top: -750px; ">
             <div class="row">
-                <div class="card col-sm-12 bg-light">
+                <div class="card bg-light" style="margin-left: 90px;">
                     <h5 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
                     fonr-weight: 400; font-size: 22px; ">Users</h5>
                     <div class="recent-only">

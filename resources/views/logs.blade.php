@@ -5,30 +5,36 @@
 @extends('navbar')
 
 @section('content')
-    <div class="container">
-        <div class="d-grid gap-2 d-md-flex mt-2">
-            <h1 style="font-family: Comic Sans MS">Activity Log</h1>
+    <div class="col-md-12">
+        <div class="mt-3" style="margin-left: 950px;">
+            <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400; font-size: 25px;">Activity Logs</h1>
         </div>
-        <table class="table table-bordered table-striped table-sm table-hover">
-            <thead style="background-color: rgba(127, 169, 199, 0.527)">
+        <div class="mt-3" style="margin-left: 300px;">
+            {{ $logs->links() }}
+        </div>
+        <div class="card col-md-10" style="position: relative; margin-left: 300px;">
+        <table class="table table-bordered bg-secondary text-light shadow-lg text-center">
+            <thead style="background-color: #2c70b1">
+
+                <th>User Name</th>
+                <th>Activities</th>
                 <th>Timestamp</th>
-                <th>Log Entry</th>
+               
             </thead>
             <tbody>
                 @foreach ($logs as $log)
                 <tr>
-                    <td>{{ $log->created_at->format('l, d F Y g:i A') }}</td>
+                    <td>{{ $log->user->name}}</td>
                     <td>{{ $log->log_entry }}</td>
+                    <td>{{ $log->created_at->format('l, d F Y g:i A') }}</td>
+                  
                 </tr>
                 @endforeach
             </tbody>
         </table>
-        {{ $logs->links() }}
-        <div class="form-group mb-2 d-grip gap-2 d-md-flex justify-content-end">
-            <a class="btn btn-info mx-2" href="{{ '/contact' }}">
-                back
-            </a>
-        </div>
+    </div>
+
+       
     </div>
 @endsection
 

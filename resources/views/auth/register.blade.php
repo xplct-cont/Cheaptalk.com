@@ -6,16 +6,16 @@
 <body>
     <div class="container col-sm-4 offset-sm-4">
         
-        <div class="card shadow mb-5 border border-light rounded" style="position:relative; top: 200px;">
+        <div class="card shadow mb-5 border border-light rounded bg-dark" style="position:relative; top: 200px;">
             <div class="d-flex justify-content-center mt-3">
                 <img src="images/image17.png" alt="" style="height: 70px; width: 71px;">
             </div>
             <div class="card-body" id="card-bodyy">
-                <h2 class="text-center mb-4" style="color:#2c70b1;">Cheaptalk.com</h2>
+                <h2 class="text-center mb-4" style="">Cheaptalk.com</h2>
                 <form action="{{ '/register' }}" method="POST">
                     {{ csrf_field() }}
 
-                    <h3 style="font-weight: 400; margin-left: 50px; color:#2c70b1; font-size:20px;">Sign Up</h3>
+                    <h3 style="font-weight: 400; margin-left: 50px; color:white; font-size:20px;">Sign Up</h3>
                     <div class="form-group mb-3 mt-1 col-sm-10 offset-sm-1">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"  style="color:#2c70b1"></i></span>
@@ -55,7 +55,7 @@
                         @enderror
                     </div>
                     <div class="form-group mb-3 text-center">
-                        <div class="form-group text-dark">
+                        <div class="form-group text-white">
                             <div class="maxl">
                                 <label class="radio inline">
                                     <input type="radio" name="gender" value="Male" checked>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="d-flex mt-4">
                         <div class="flex-grow-1">
-                            <a href="{{ '/' }}" class="" style="color:#2c70b1; margin-left: 40px;">Already have an account</a>
+                            <a href="{{ '/' }}" class="" style="text-decoration:none; color:#2c70b1; margin-left: 40px;">Already have an account</a>
                         </div>
                         <button class="btn px-5" style="background-color:#2c70b1; color:white;"><span class="fas fa-sign-out"></span> Register</button>
                     </div>

@@ -7,10 +7,10 @@
                 <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
             @endif
            
-            <div class="col p-3 shadow-sm rounded mb-5" style="background-color: #2c70b1;" id="write">
-               <img src="images/image17.png" style="height: 29px; width:29px; padding-top:2px; padding-bottom:2px; padding-left: 2px; padding-right:2px; border-radius: 50%; background-color:white;" alt="">
-                <p class="text-light">Search Posts Here!</p>
-                <input type="text" class="write-2 form-control" placeholder="Search" wire:model.lazy="search">
+            <div class="d-flex justify-content-center" style="color:#2c70b1; font-weight: 450"> Search posts here...</div>
+            <div class=" d-flex justify-content-center p-3  rounded mb-5" id="write">
+                <input type="text" class="write-2 form-control" style="width: 300px;" placeholder="Search" wire:model.lazy="search">
+               
             </div>
             <select class="form-select mb-1" style="background-color:#2c70b1; width: 300px;" id="searchh" wire:model.lazy="title">
                 <option value="All" class="text-center">---Select Category---</option>
@@ -32,7 +32,7 @@
             <div class="row">
                 @foreach ($recents as $recent)
                     <div class="col-md-4 mt-1" >
-                        <div class="card shadow-lg ">
+                        <div class="card shadow-lg" >
                             <div class="card-header" style="background-color: #2c70b1;" id="cardd">
                                 @role('admin')
                                 <span id="dot-icon" class="float-end dropdown dropstart" style="background-color:#2c70b1">
@@ -47,10 +47,10 @@
                                     <span class="float-start" >{{ $recent->title }}</span>
                                 </div>
                               
-                                <div class="card-footer bg-secondary">
+                                <div class="card-footer {{ $recent->user->gender === 'Female' ? 'f1' : 'm1' }}">
                             
                                     <div class="float-center d-flex justify-content-center">
-                                    <img class="card" style="border-radius: 50%; width: 80px;" id="pf1"
+                                    <img class="card " style="border-radius: 50%; width: 80px;"
                                     src="{{ $recent->user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
                                     alt="photo">
                               
@@ -83,6 +83,13 @@
 </div>
 
 <style>
+
+       .f1 {
+            background-color: lightpink;
+        }
+        .m1 {
+            background-color: lightblue;
+        }
     .name {
         color: whitesmoke;
         font-size: 20px;
@@ -147,9 +154,7 @@
     #myBtn:hover {
         background-color: rgb(12, 142, 154);
     }
-    #write {
-        background-color: rgba(116, 115, 115, 0.661);
-    }
+   
     .write-2 {
         border-radius: 20px;
     }
@@ -213,9 +218,7 @@
         height: 40px;
         border-radius: 50%;
     }
-    #write {
-        background-color: rgba(116, 115, 115, 0.661);
-    }
+   
     .write-2 {
         border-radius: 20px;
     }

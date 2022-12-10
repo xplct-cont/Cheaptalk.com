@@ -1,15 +1,16 @@
 <div>
     {{-- Modal post Features --}}
     <div wire.ignore.self class="modal fade" id="click" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" id="modall">
-                <div class="modal-header text-center">
-                    <h5 class="modal-title title1 text-white" id="exampleModalLabel">Create post</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" style="background-color: #2c70b1;" id="modall">
+                <div class="modal-header text-center" style="background-color: #2c70b1;">
+                    <h5 class="modal-title title1 text-white" id="exampleModalLabel">Creating post...</h5>
+                    <button type="button"data-dismiss="modal"  style="background-color:maroon; color:white;" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <select name="title" class="form-select" wire:model.defer="title">
+            <br>
+                <select name="title" class="form-select bg-light text-dark" style="width: 200px; margin-left: 10px;" wire:model.defer="title">
                     <option hidden="true">Choose Category...</option>
                     <option value="Business">Business</option>
                     <option value="Education">Education</option>
@@ -20,14 +21,16 @@
                     <option value="Religion">Religion</option>
                     <option value="Romance">Romance</option>
                 </select>
-                <div class="modal-body">
-                    <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Express your feelings" wire:model.defer="content"></textarea>
+                <br>
+                <div class="modal-body bg-light rounded">
+                    <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Write some post..." wire:model.defer="content"></textarea>
                 </div>
                 @error('content')
                     <p class="text-danger text-center">{{ $message }}</p>
                 @enderror
-                <div class="modal-footer">
-                        <button type="button" id="submit-button" class="btn btn-secondary form-control" wire:click="addPost()"><div wire:loading><svg class="loading"></svg></div> Post</button>
+                <br>
+                <div class="modal-footer bg-light">
+                        <button type="button" id="submit-button" class="btn form-control" style="background-color: #2c70b1; color:white; width: 150px;" wire:click="addPost()"><div wire:loading><svg class="loading"></svg></div> Post</button>
                 </div>
             </div>
         </div>
@@ -36,19 +39,17 @@
 
     {{-- modal delete post --}}
     <div wire:ignore.self class="modal fade" id="click-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" id="modall">
-                <div class="modal-header">
-                    <h5 class="modal-title title3 text-white" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content bg-light text-light"   id="modall">
+                <div class="modal-header  bg-danger">
+                    <h5 class="modal-title title3 text-light" style="font-weight: 400;" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
+                    <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p class="text-center text-white">This deletion can not be undone</p>
-                </div>
+               
                 <div class="modal-footer">
-                    <button type="button" id="submit-button" class="btn btn-secondary form-control" wire:click="deletePost()">Delete Post</button>
+                    <button type="button" id="submit-button" style="width: 150px;"  class="btn btn-danger form-control" wire:click="deletePost()">Delete Post</button>
                 </div>
             </div>
         </div>
@@ -57,15 +58,16 @@
 
     {{-- Modal edit feature --}}
     <div wire:ignore.self class="modal fade" id="click-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" id="modall">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" style="background-color: #2c70b1;" id="modall">
                 <div class="modal-header">
-                    <h5 class="modal-title title2 text-white" id="exampleModalLabel">Edit post</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h5 class="modal-title title2 text-white" id="exampleModalLabel">Editing post...</h5>
+                    <button type="button" style="background-color:maroon; color:white;"  data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <select name="title" class="form-select" wire:model.defer="title">
+                <br>
+                <select name="title" class="form-select bg-light text-dark" style="width: 200px; margin-left: 10px;" wire:model.defer="title">
                     <option hidden="true">Choose Category...</option>
                     <option value="Business">Business</option>
                     <option value="Education">Education</option>
@@ -76,14 +78,16 @@
                     <option value="Religion">Religion</option>
                     <option value="Romance">Romance</option>
                 </select>
-                <div class="modal-body">
-                    <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Express your feelings" wire:model.defer="content"></textarea>
+                <br>
+                <div class="modal-body bg-light rounded">
+                    <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Write some post..." wire:model.defer="content"></textarea>
                 </div>
                 @error('content')
                     <p class="text-danger text-center">{{ $message }}</p>
                 @enderror
-                <div class="modal-footer">
-                    <button type="button" id="submit-button" class="btn btn-secondary form-control" wire:click="updatePosts()"><div wire:loading><svg class="loading"></svg></div> Update Post</button>
+                <br>
+                <div class="modal-footer bg-light">
+                    <button type="button" id="submit-button" class="btn form-control" style="width: 200px; background-color:#2c70b1; color:white;" wire:click="updatePosts()"><div wire:loading><svg class="loading"></svg></div> Update Post</button>
                 </div>
             </div>
         </div>
@@ -94,8 +98,8 @@
     <div wire:ignore.self class="modal fade" id="click-delete-recent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content" id="modall">
-            <div class="modal-header">
-                <h5 class="modal-title title3 text-dark" style="font-weight: 400;" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title title3 text-light" style="font-weight: 400;" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
                 <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -112,14 +116,15 @@
     {{-- Recent Modal edit feature --}}
     <div wire:ignore.self class="modal fade" id="click-edit-recent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content" id="modall">
+            <div class="modal-content" style="background-color: #2c70b1;" id="modall">
             <div class="modal-header" style="background-color:#2c70b1;">
-                <h5 class="modal-title title2 text-white">Editing posts...</h5>
+                <h5 class="modal-title title2 text-white">Editing post...</h5>
                 <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <select name="title" class="form-select bg-white shadow-lg" id="rm" wire:model.defer="title">
+            <br>
+            <select name="title" class="form-select bg-light shadow-lg" style="width: 200px; margin-left: 10px;" id="rm" wire:model.defer="title">
                 <option hidden="true">Choose Category...</option>
                 <option value="Business">Business</option>
                 <option value="Education">Education</option>
@@ -130,13 +135,15 @@
                 <option value="Religion">Religion</option>
                 <option value="Romance">Romance</option>
             </select>
+            <br>
             <div class="modal-body bg-light text-dark">
-                <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Write some posts..." wire:model.defer="content"></textarea>
+                <textarea name="content" id="text-area" cols="50" rows="5" placeholder="Write some post..." wire:model.defer="content"></textarea>
             </div>
             @error('content')
                 <p class="text-danger text-center">{{ $message }}</p>
             @enderror
-            <div class="modal-footer">
+            <br>
+            <div class="modal-footer bg-light">
                 <button type="button" id="submit-button"   class="btn form-control" style="background-color: #2c70b1; color:white; width: 150px;" wire:click="updatePosts()"><div wire:loading><svg class="loading"></svg></div> Update Post</button>
             </div>
             </div>

@@ -6,15 +6,6 @@
 
 <body>
     
-    {{-- <div class="container">
-        <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="236" height="44"><style>.st0{fill:#DB3236;}</style><g id="XMLID_2_"><path id="XMLID_62_"></svg>
-        <div id="running-text">
-          <h2>WELCOME TO CHEAPTALK.COM</h2>
-        </div>
-        </div>
-    </div> --}}
-
-
     <div class="container col-md-4">
         @if (session('message'))
         <div id="messagee" class="alert alert-success text-center">{{ session('message') }}</div>
@@ -22,16 +13,16 @@
         @if (session('error'))
         <div id="messagee" class="alert alert-danger text-center">{{ session('error') }}</div>
         @endif
-        <div class="card shadow mb-5 rounded border border-light" style="position: relative; top: 200px;">
+        <div class="card shadow mb-5 rounded border border-light bg-dark" style="position: relative; top: 200px;">
         <div class="d-flex justify-content-center mt-3">
             <img src="images/image17.png" alt="" style="height: 70px; width: 71px;">
         </div>
             <div class="card-body" id="card-bodyy">
-                <h2 class="text-center mb-4" style="color:#2c70b1;">Cheaptalk.com</h2>
+                <h2 class="text-center mb-4" style="">Cheaptalk.com</h2>
                 <form action="{{ '/' }}" method="POST">
                     {{ csrf_field() }}
 
-                    <h3 style="font-weight: 400; margin-left: 50px; color:#2c70b1; font-size:20px;">Login</h3>
+                    <h3 class="text-light" style="font-weight: 400; margin-left: 50px; font-size:20px;">Login</h3>
                     <div class="form-group mb-3 mt-1 col-sm-10 offset-sm-1">
                         <div class="input-group mb-3">
                             <span class="input-group-text" ><i class="fa fa-envelope"  style="color:#2c70b1"></i></span>
@@ -53,9 +44,9 @@
                     </div>
                     <div class="d-flex">
                         <div class="flex-grow-1">
-                            <a href="{{ '/register' }}" class="" style="color: #2c70b1; margin-left: 160px; position:relative; top:50px;">Dont have an account? Sign Up</a>
+                            <a href="{{ '/register' }}" class="" style=" text-decoration:none; color: #2c70b1; margin-left: 160px; position:relative; top:50px;">Dont have an account? <span class="text-light">Sign Up</span></a>
                         </div>
-                        <button class="btn  px-5" style="background-color: #2c70b1; color:white;" type="submit"><span class="fas fa-sign-out"></span> Login</button>
+                        <button class="btn  px-5" style="background-color: #2c70b1; color:white;" type="submit"><span class="fas fa-sign-out"></span>Login</button>
                     </div>
                     </form>
             </div>
@@ -87,10 +78,8 @@
     width: 40px;
     text-align: center;
 }
-body{
-  
-  
-}
+
+
 #card-bodyy {
     
     height: 350px;

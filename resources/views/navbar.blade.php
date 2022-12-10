@@ -31,7 +31,7 @@
 
         @role('admin')
       
-            <a class="nav-link text-white mt-1 mb-1 {{ 'log' == request()->path() ? 'active' : '' }}" href="{{ '/log' }}"><span class="fas fa-book"></span> Logs</a>
+            <a class="nav-link text-white mt-1 mb-1 {{ 'log' == request()->path() ? 'active' : '' }}" href="{{ '/log' }}"><span class="fas fa-book"></span> Activity Logs</a>
             <div class="bg-secondary text-white text-center" style="padding-top:10px; padding-bottom: 10px;"><span class="fas fa-gear"></span> SETTINGS</div>
             <a class="nav-link text-white mt-1 {{ 'admin/roles' == request()->path() ? 'active' : '' }}" href="{{ route('admin.roles.index') }}"><span class="fas fa-user-edit"></span> Roles</a>
             <a class="nav-link text-white  mt-1 {{ 'admin/permissions' == request()->path() ? 'active' : '' }}" href="{{ route('admin.permissions.index') }}"><span class="fas fa-user-edit"></span> Permissions</a>
