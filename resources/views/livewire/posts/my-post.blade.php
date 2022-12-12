@@ -47,7 +47,7 @@
                                 alt="photo">
                           
                                 </div>
-                                <p class="text-center text-light">{{ $post->user->name }}</p>
+                                <p class="text-center text-dark">{{ $post->user->name }}</p>
                                 
                             </div>
                             <div class="card-body bg-light rounded shadow-lg">

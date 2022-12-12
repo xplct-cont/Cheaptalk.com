@@ -55,7 +55,7 @@
                                     alt="photo">
                               
                                     </div>
-                                    <p class="text-center text-light">{{ $recent->user->name }}</p>
+                                    <p class="text-center text-dark">{{ $recent->user->name }}</p>
                                     
                                 </div>
                                 <div class="card-body bg-light rounded shadow-lg">
