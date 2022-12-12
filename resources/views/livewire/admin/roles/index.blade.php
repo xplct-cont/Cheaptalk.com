@@ -11,7 +11,7 @@
         <input type="search" class="form-control float-end mx-2 mb-3" style="width: 250px;" placeholder="Search" wire:model.lazy="search">
        </div>
         <div class="">
-            <table class="col-md-12 table table-striped shadow  table-xl">
+            <table class="col-md-12 table table-striped table-bordered shadow  table-xl">
                 <thead class="text-white text-center" style="background-color: #2c70b1">
                     <tr>
                         <th>Edit</th>

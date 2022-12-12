@@ -81,28 +81,28 @@
 
     {{-- modal for permissions --}}
     <div wire:ignore.self class="modal fade" id="modal-permissions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title title1" id="exampleModalLabel">Add Permissions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header" style="background-color: #2c70b1; color:white;">
+                <h5 class="modal-title title1" id="exampleModalLabel">Adding permissions...</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <form wire:submit.prevent="addPermissions">
-                <div class="modal-body">
+                <div class="modal-body bg-secondary text-light">
                     @csrf
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Name</label>
+                        <label for="recipient-name" class="col-form-label">Permission</label>
                         <input type="text" class="form-control" id="recipient-name" wire:model.defer="name" required="">
                         @error('name')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success"><div wire:loading><svg class="loading"></svg></div> Add Permissions</button>
+                <div class="modal-footer bg-light text-dark">
+              
+                <button type="submit" class="btn " style="background-color: #2c70b1; color:white;"><div wire:loading><svg class="loading"></svg></div> Add Permission</button>
                 </div>
                 </form>
             </div>
@@ -112,28 +112,28 @@
 
     {{-- modal update for permissions --}}
     <div wire:ignore.self class="modal fade" id="update-modal-permissions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title title2" id="exampleModalLabel">Edit Permissions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header" style="background-color: #2c70b1; color:white">
+                <h5 class="modal-title title2" id="exampleModalLabel">Updating permission...</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <form wire:submit.prevent="addPermissions">
-                <div class="modal-body">
+                <div class="modal-body bg-secondary text-light">
                     @csrf
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Name</label>
+                        <label for="recipient-name" class="col-form-label">Permission</label>
                         <input type="text" class="form-control" id="recipient-name" wire:model.defer="name" required="">
                         @error('name')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success" wire:click="updatePermissions()"><div wire:loading><svg class="loading"></svg></div> Update Permissions</button>
+                <div class="modal-footer bg-light text-dark">
+            
+                <button type="submit" class="btn" style="background-color: #2c70b1; color:white;" wire:click="updatePermissions()"><div wire:loading><svg class="loading"></svg></div> Update Permission</button>
                 </div>
                 </form>
             </div>
@@ -143,20 +143,18 @@
 
     {{-- delete permissions modal --}}
     <div wire:ignore.self class="modal fade" id="delete-modal-permissions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Are you sure you want to delete this permissions?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header bg-danger" style=" color:white;">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px; font-weight: 400;">Are you sure you want to delete this permission?</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p class="text-center text-black ">This deletion can not be undone</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success" wire:click="deletePermissions()"><div wire:loading><svg class="loading"></svg></div> Delete Permissions</button>
+            
+            <div class="modal-footer bg-light text-dark">
+              
+                <button type="submit" class="btn " style="background-color: #2c70b1; color:white;" wire:click="deletePermissions()"><div wire:loading><svg class="loading"></svg></div> Delete Permission</button>
             </div>
             </div>
         </div>
@@ -165,16 +163,16 @@
 
     {{-- modal update for users --}}
     <div wire:ignore.self class="modal fade" id="update-modal-users" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title title2" id="exampleModalLabel">Edit Users</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header" style="background-color: #2c70b1; color:white;">
+                <h5 class="modal-title title2" id="exampleModalLabel">Updating users...</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <form wire:submit.prevent="updateUsers">
-                <div class="modal-body">
+                <div class="modal-body bg-secondary text-light">
                     @csrf
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Name</label>
@@ -187,28 +185,31 @@
                         @error('email')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <select wire:model.defer="gender" class="mt-2" id="" required="">
-                            <option hidden="true">Gender</option>
+                       
+                       <div class="d-flex justify-content-end">
+                       
+                        <select wire:model.defer="gender" class="mt-2 form-control" style="width: 150px;" id="" required="">
+                            <option hidden="true">--Select Gender--</option>
                             <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Bisexual">Bisexual</option>
-                            <option value="Transgender">Transgender</option>
                         </select>
+                        
                         @error('gender')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <select class="mt-2" id="">
-                            <option hidden="true">Role</option>
-                            <option selected disabled>Role</option>
-                            <option value="" disabled>Admin</option>
-                            <option value="" disabled>Writer</option>
+                       </div>
+                        <select class="mt-2 form-control" style="width: 150px;" id="">
+                            <option hidden="true">--Select Role--</option>
+                            <option selected disabled>--Select Role--</option>
+                            <option value="" >Admin</option>
+                            <option value="" >Writer</option>
                         </select>
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success"><div wire:loading><svg class="loading"></svg></div> Update User</button>
+                <div class="modal-footer bg-light text-dark">
+                
+                <button type="submit" class="btn" style="background-color: #2c70b1;color:white;"><div wire:loading><svg class="loading"></svg></div> Update User</button>
                 </div>
                 </form>
             </div>
@@ -218,20 +219,18 @@
 
     {{-- delete users modal --}}
     <div wire:ignore.self class="modal fade" id="delete-modal-users" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this user?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header bg-danger text-light">
+                <h5 class="modal-title" id="exampleModalLabel" style="font-weight: 400;">Are you sure you want to delete this user?</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p class="text-center text-black ">This deletion can not be undone</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success" wire:click="deleteUsers()"><div wire:loading><svg class="loading"></svg></div> Delete User</button>
+            
+            <div class="modal-footer bg-light text-dark">
+               
+                <button type="submit" class="btn btn-danger" wire:click="deleteUsers()"><div wire:loading><svg class="loading"></svg></div> Delete User</button>
             </div>
             </div>
         </div>
@@ -240,25 +239,25 @@
 
     {{-- modal for add users --}}
     <div wire:ignore.self class="modal fade" id="modal-user" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title title1" id="exampleModalLabel">Add User</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header" style="background-color: #2c70b1; color:white;">
+                <h5 class="modal-title title1" id="exampleModalLabel">Adding user...</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <form wire:submit.prevent="addUser">
-                <div class="modal-body">
+                <div class="modal-body bg-secondary text-light">
                     @csrf
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Name</label>
-                        <input type="text" class="form-control" id="recipient-name" wire:model.defer="name" required="">
+                        <input type="text" class="form-control" id="recipient-name" wire:model.defer="name" placeholder="Enter name" required="">
                         @error('name')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <label for="recipient-name" class="col-form-label">Email</label>
-                        <input type="email" class="form-control" id="recipient-name" wire:model.defer="email" required="">
+                        <label for="recipient-name" class="col-form-label">Email Address</label>
+                        <input type="email" class="form-control" id="recipient-name" wire:model.defer="email" placeholder="Enter email address" required="">
                         @error('email')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
@@ -272,28 +271,28 @@
                         @error('password_confirmation')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
-                        <select class="mt-2" id="" wire:model.defer="gender">
-                            <option hidden="true">Gender</option>
+                       <div class="d-flex justify-content-end">
+                        <select class="mt-2 form-control" style="width: 150px;" id="" wire:model.defer="gender">
+                            <option hidden="true">--Select Gender--</option>
                             <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Bisexual">Bisexual</option>
-                            <option value="Transgender">Transgender</option>
                         </select>
                         @error('gender')
                             <p class="text-danger" id="messagee">{{ $message }}</p>
                         @enderror
-                        <select class="mt-2" id="">
-                            <option hidden="true">Role</option>
-                            <option selected disabled>Role</option>
-                            <option value="" disabled>Admin</option>
-                            <option value="" disabled>Writer</option>
+                       </div>
+                        <select class="mt-2 form-control" style="width: 150px;" id="">
+                            <option hidden="true">Select Role</option>
+                            <option selected disabled>--Select Role--</option>
+                            <option value="" >Admin</option>
+                            <option value="" >Writer</option>
                         </select>
                     </div>
                 </div>
-                <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success"><div wire:loading><svg class="loading"></svg></div> Add User</button>
+                <div class="modal-footer bg-light text-dark">
+              
+                <button type="submit" class="btn " style="background-color: #2c70b1; color:white;"><div wire:loading><svg class="loading"></svg></div> Add User</button>
                 </div>
                 </form>
             </div>
