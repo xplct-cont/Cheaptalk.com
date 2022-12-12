@@ -153,8 +153,7 @@
             </div>
             
             <div class="modal-footer bg-light text-dark">
-              
-                <button type="submit" class="btn " style="background-color: #2c70b1; color:white;" wire:click="deletePermissions()"><div wire:loading><svg class="loading"></svg></div> Delete Permission</button>
+                <button type="submit" class="btn bg-danger " style=" color:white;" wire:click="deletePermissions()"><div wire:loading><svg class="loading"></svg></div> Delete Permission</button>
             </div>
             </div>
         </div>
@@ -282,12 +281,6 @@
                             <p class="text-danger" id="messagee">{{ $message }}</p>
                         @enderror
                        </div>
-                        <select class="mt-2 form-control" style="width: 150px;" id="">
-                            <option hidden="true">Select Role</option>
-                            <option selected disabled>--Select Role--</option>
-                            <option value="" >Admin</option>
-                            <option value="" >Writer</option>
-                        </select>
                     </div>
                 </div>
                 <div class="modal-footer bg-light text-dark">
