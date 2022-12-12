@@ -84,18 +84,11 @@
 </body>
 
 
-<div class="box">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      
-    </ul>
-</div>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+
 @endsection
 
 <style>
@@ -106,59 +99,6 @@
 }
 #card-bodyy {
    
-}
-body{
-   
-}
-
-
-.box ul li {
-	position: absolute;
-	width: 35px;
-	height: 35px;
-	list-style: none;
-	opacity: 0;
-	background: radial-gradient(#2c70b1, #2c70b1, transparent);
-	bottom: 0;
-	left: 10vw;
-	animation: animate 15s linear infinite;
-}
-.box ul li:nth-child(2) {
-	left: 25vw;
-	animation-delay: 4s;
-}
-.box ul li:nth-child(3) {
-	left: 22vw;
-	animation-delay: 9s;
-}
-.box ul li:nth-child(4) {
-	left: 71vw;
-	animation-delay: 6s;
-}
-.box ul li:nth-child(5) {
-	left: 79vw;
-	animation-delay: 3s;
-}
-.box ul li:nth-child(6) {
-	left: 82vw;
-	animation-delay: 8s;
-}
-.box ul li:nth-child(7) {
-	left: 80vw;
-	animation-delay: 13s;
-}
-
-@keyframes animate {
-	0% {
-		transform: scale(0);
-		opacity: 1;
-		bottom: 0;
-	}
-	100% {
-		transform: scale(10);
-		opacity: 0;
-		bottom: 100vh;
-	}
 }
 
 
@@ -222,6 +162,51 @@ h2 {
     transform: none;
   }
 }
+
+
+
+
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #2c70b1 50%, white 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
 </style>
 <script>
     function myFunction() {
