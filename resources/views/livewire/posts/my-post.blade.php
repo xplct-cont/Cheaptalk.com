@@ -4,7 +4,7 @@
         <div class="post-body col-md-12 mt-2">
             <div class=" offset-3 " >
                 <div class=" shadow-md p-3 " style="width:200px;">
-                    <button class="write-2 form-control" style="color:white;background-color: #2c70b1;" data-toggle="modal" data-target="#click">Create new post</button>
+                    <button class="write-2 form-control" style="color:white;background-color: #2c70b1;" data-toggle="modal" data-target="#click"><span class="fas fa-plus-circle"></span> Create new post</button>
                 </div>
             </div>
            
@@ -60,16 +60,14 @@
             @endforeach
         </div>
         
-
-
-      
+    
       
         </div>
     </div>
        
         @if($posts->isEmpty())
             <div class="text-gray-500">
-                <h1 class="text-center">No posts yet.</h1>
+                <h1 class="text-center" style="font-weight: 400; font-size: 30px;"><span class="fas fa-exclamation text-danger"></span> No posts.</h1>
             </div>
         @endif
         <button onclick="topFunction()" id="myBtn" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>

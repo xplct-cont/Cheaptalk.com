@@ -1,28 +1,27 @@
 <div>
     {{-- add modal for roles --}}
     <div wire:ignore.self class="modal fade" id="modal-roles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title title1" id="exampleModalLabel">Add Roles</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content ">
+            <div class="modal-header" style="background-color: #2c70b1">
+                <h5 class="modal-title title1 text-light" id="exampleModalLabel">Adding roles...</h5>
+                <button type="button"  style="background-color:maroon; color:white;"  data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form wire:submit.prevent="addRoles">
-            <div class="modal-body">
+            <div class="modal-body bg-secondary text-light">
                     @csrf
                 <div class="form-group">
-                    <label for="name" class="col-form-label">Name</label>
+                    <label for="name" class="col-form-label">Role</label>
                     <input type="text" class="form-control" id="name" wire:model.defer="name" required="">
                     @error('name')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success"><div wire:loading><svg class="loading"></svg></div> Add Roles</button>
+            <div class="modal-footer bg-light">
+                <button type="submit" class="btn " style="background-color: #2c70b1; color:white;"><div wire:loading><svg class="loading"></svg></div> Add Role</button>
             </div>
             </form>
             </div>
@@ -32,27 +31,27 @@
 
     {{-- modal update for roles --}}
     <div wire:ignore.self class="modal fade" id="update-modal-roles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title title2" id="exampleModalLabel">Update Roles</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header" style="background-color: #2c70b1; color:white;">
+                <h5 class="modal-title title2" id="exampleModalLabel">Updating role...</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form wire:submit.prevent="updateRoles">
-            <div class="modal-body">
+            <div class="modal-body bg-secondary text-light">
                     @csrf
                 <div class="form-group">
-                    <label for="name" class="col-form-label">Name</label>
+                    <label for="name" class="col-form-label">Role</label>
                     <input type="text" class="form-control" id="name" wire:model.defer="name" required="">
                     @error('name')
                         <p class="text-danger">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-success"><div wire:loading><svg class="loading"></svg></div> Update Roles</button>
+                   
+                    <button type="submit" class="btn " style="background-color: #2c70b1; color:white;"><div wire:loading><svg class="loading"></svg></div> Update Roles</button>
                 </div>
             </div>
             </form>
@@ -63,20 +62,17 @@
 
     {{-- delete roles modal --}}
     <div wire:ignore.self class="modal fade" id="delete-modal-roles" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title title3" id="exampleModalLabel">Are you sure you want to delete this roles?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header bg-danger text-light">
+                <h5 class="modal-title title3" id="exampleModalLabel" style="font-weight: 400;">Are you sure you want to delete this role?</h5>
+                <button type="button" style="background-color:maroon; color:white;" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p class="text-center text-black ">This deletion can not be undone</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" id="closee" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-success" wire:click="deleteRoles()"><div wire:loading><svg class="loading"></svg></div> Delete Roles</button>
+           
+            <div class="modal-footer bg-light">
+                <button type="submit" class="btn btn-danger text-light" wire:click="deleteRoles()"><div wire:loading><svg class="loading"></svg></div> Delete Role</button>
             </div>
             </div>
         </div>

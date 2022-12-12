@@ -18,7 +18,7 @@
 
                 <th>User Name</th>
                 <th>Activities</th>
-                <th>Timestamp</th>
+                <th>Date/Time</th>
                
             </thead>
             <tbody>
