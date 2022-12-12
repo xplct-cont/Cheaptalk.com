@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg shadow" style="background-color:#2c70b1;">
-    <img src="{{ asset('images/image17.png') }}" alt="logo" class="img-fluid rounded-circle img-responsive" title="brand logo" style=" background-color:white; padding-left: 2px; padding-right:2px; padding-bottom: 2px; padding-top: 2px; width: 52px; height: 50px; margin-left: 50px; cursor: pointer">
-    <a href="#" style="text-decoration: none;"> <h2 class="p-2 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400;font-size:25px;"><span style="color:white;">Cheaptalk.com</h2></a>
+    <img src="{{ asset('images/image17.png') }}" alt="logo" class="img-fluid rounded-circle img-responsive" title="brand logo" style="margin-left: 10px;; background-color:white; padding-left: 2px; padding-right:2px; padding-bottom: 2px; padding-top: 2px; width: 52px; height: 50px; cursor: pointer">
+    <a href="/recent-post" style="text-decoration: none;"> <h2 class="p-2 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 400;font-size:25px;"><span style="color:white;">Cheaptalk.com</h2></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

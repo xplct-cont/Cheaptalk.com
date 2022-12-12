@@ -5,10 +5,10 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="container">
-        <h1 class="text-start" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
+    <div class="container mt-2" style="margin-left: 350px;">
+        <h1 class="text-center" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
         <div class="content " style="position: relative; margin-left: 170px;">
-            <div class="row mt-5 text-center">
+            <div class="row mt-4 text-center">
                 <div class="col-md-3 mb-2">
                     <div class="card shadow">
                         <a href="/recent-post" id="dash-link">
@@ -34,7 +34,7 @@
                 
                 <div class="col-md-3 mb-2">
                     <div class="card shadow">
-                        <a href="/recent-post" id="dash-link">
+                        <a href="/admin/users" id="dash-link">
                             <div class="card-body rounded " style="background-color:#2c70b1; height: 130px;">
                                 <div class="row">
                                     <div class="col">
@@ -94,8 +94,8 @@
         <section style="position:relative; top: -750px; ">
             <div class="row">
                 <div class="card bg-light" style="margin-left: 90px;">
-                    <h5 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-                    fonr-weight: 400; font-size: 22px; ">Users</h5>
+                    <h5 class="p-2" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    font-weight: 400; font-size: 22px; ">Users</h5>
                     <div class="recent-only">
                         <livewire:users.users/>
                     </div>
