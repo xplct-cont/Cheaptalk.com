@@ -14,6 +14,7 @@
             <table class="table table-striped shadow table-bordered table-md table-hover text-center">
                 <thead class=" text-white" style="background-color: #2c70b1;">
                     <tr>
+                        <th>Profile Image</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Gender</th>
@@ -24,6 +25,9 @@
                 <tbody class="bg-light text-dark">
                     @foreach ($users as $user)
                     <tr>
+                        <td class="text-center"><img style="border-radius: 50%; width: 40px;"
+                            src="{{ $user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
+                            alt="photo"></td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->gender }}</td>
