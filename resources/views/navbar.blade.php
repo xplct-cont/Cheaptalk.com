@@ -27,11 +27,11 @@
          
     @endrole
         <a class="nav-link text-white mt-1 {{ 'recent-post' == request()->path() ? 'active' : '' }}" href="{{ '/recent-post' }}"><span class="fas fa-history"></span> Recent Posts</a>
-        <a class="nav-link text-white mt-1 {{ 'my-post' == request()->path() ? 'active' : '' }}" href="{{ '/my-post'}}"><span class=" fas fa-thumbs-o-up"></span> My Posts</a>
+        <a class="nav-link text-white mt-1 {{ 'my-post' == request()->path() ? 'active' : '' }}" href="{{ '/my-post'}}"><span class=" fas fa-notes"></span> My Posts</a>
 
         @role('admin')
       
-            <a class="nav-link text-white mt-1 mb-1 {{ 'log' == request()->path() ? 'active' : '' }}" href="{{ '/log' }}"><span class="fas fa-book"></span> Activity Logs</a>
+            <a class="nav-link text-white mt-1 mb-1 {{ 'log' == request()->path() ? 'active' : '' }}" href="{{ '/log' }}"><span class="fas fa-books"></span> Activity Logs</a>
             <div class="bg-secondary text-white text-center" style="padding-top:10px; padding-bottom: 10px;"><span class="fas fa-gear"></span> SETTINGS</div>
             <a class="nav-link text-white mt-1 {{ 'admin/roles' == request()->path() ? 'active' : '' }}" href="{{ route('admin.roles.index') }}"><span class="fas fa-user-gear"></span> Roles</a>
             <a class="nav-link text-white  mt-1 {{ 'admin/permissions' == request()->path() ? 'active' : '' }}" href="{{ route('admin.permissions.index') }}"><span class="fas fa-user-edit"></span> Permissions</a>

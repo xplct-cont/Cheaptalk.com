@@ -57,7 +57,7 @@
                             <div class="card-body rounded" style="background-color:#2c70b1;  height: 130px;">
                                 <div class="row">
                                     <div class="col">
-                                        <i class="fa fa-book text-white mt-2" id="dash-icon"></i>
+                                        <i class="fa fa-books text-white mt-2" id="dash-icon"></i>
                                     </div>
                                     <div class="col mt-4">
                                         <span class="text-white float-right" id="text" style="font-size:17px;">Activity Logs</span><br>
@@ -76,7 +76,7 @@
                             <div class="card-body rounded" style="background-color:#2c70b1;  height: 130px;">
                                 <div class="row">
                                     <div class="col">
-                                        <i class="fa fa-thumbs-o-up text-white mt-2" id="dash-icon"></i>
+                                        <i class="fa fa-notes text-white mt-2" id="dash-icon"></i>
                                     </div>
                                     <div class="col mt-4">
                                         <span class="text-white float-right" id="text" style="font-size:17px;">Your Posts</span><br>
